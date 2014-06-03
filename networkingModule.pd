@@ -1,0 +1,94 @@
+#N canvas 338 198 912 469 10;
+#X obj 131 -81 bng 30 250 50 0 empty empty receiving_Kinect_Data 0
+40 0 10 -262144 -1 -1;
+#X floatatom 236 -114 5 0 0 1 ms_IN_msg_speed receive_SPEEDLIM SPEEDLIM
+;
+#X obj 485 -161 loadbang;
+#X obj 131 -150 oscx/OSCroute /ping;
+#X text 394 -52 port 12000;
+#X floatatom 237 -90 5 0 0 1 ms_OUT_msg_speed receive_MOBSPEEDLIM MOBSPEEDLIM
+;
+#X msg 485 -137 \; receive_SPEEDLIM 30 \; receive_MOBSPEEDLIM 30 \;
+;
+#X obj 10 -167 oscx/dumpOSC 12000;
+#X text 396 -93 local IP;
+#X obj 10 -28 oscx/OSCroute /moping /acc /gyro /touch /distances /azimuts
+/speed /behaviour /tuning;
+#X text 481 -78 SPEEDLIM for the Kinect data;
+#X text 482 -64 MOBSPEEDLIM for mobile data;
+#X text 481 -92 set limit for float of OSC messages in ms;
+#X obj 10 228 s mpoing_pesi;
+#X obj 49 200 s acc_pesi;
+#X obj 88 173 s gyro_pesi;
+#X obj 127 147 s touch_pesi;
+#X obj 166 120 s distances_pesi;
+#X obj 244 61 s speed_pesi;
+#X obj 283 32 s behaviour_pesi;
+#X obj 322 5 s tuning_pesi;
+#N canvas 368 302 450 300 readme 0;
+#X text 20 17 mobile phones \, kinect server and PESI InSpace should
+be setup in the same local network and IP for each device shoul be
+set in network settings as: -- PESI_System_InSpace: 168.254.0.1 --------------------
+Kinect Server: 168.0.0.1 ---------------------------- Mobile phone
+1: 169.254.0.4 ------------------------- Mobile phone 2: 169.254.0.5
+------------------------- Mobile phone 3: 169.254.0.6;
+#X obj 30 158 shell;
+#X obj 33 182 symbol;
+#X symbolatom 34 206 16 0 0 0 - - -;
+#X msg 30 136 ipconfig getifaddr en1;
+#X obj 38 282 s \$0-Ip;
+#X msg 33 234 label \$1;
+#X msg 41 255 color 40 22;
+#X obj 181 149 loadbang;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 6 0;
+#X connect 4 0 1 0;
+#X connect 6 0 5 0;
+#X connect 7 0 5 0;
+#X connect 8 0 4 0;
+#X connect 8 0 7 0;
+#X restore 482 -41 pd readme Network IPs;
+#X text 162 168 Mobile Phone Data \; 3-axis gyroscope with x \, y \,
+z values;
+#X text 119 195 Mobile Phone Data \; 3-axis accelerometer with x \,
+y \, z values;
+#X text 269 113 Kinect Server Data \; distance values between each
+performer;
+#X text 96 222 Mobile Phone Data \; last digit of the mobile phone
+IP number;
+#X text 409 -1 Mobile Phone Data \; tuning values for each instrument
+;
+#X text 297 84 Kinect Server Data \; azimuth position of each performer
+;
+#X text 323 55 Kinect Server Data \; performers movement speed values
+;
+#X text 206 141 Mobile Phone Data \; touch screen with x \, y values
+;
+#X obj 205 91 s azimuth_pesi;
+#X text 386 26 Kinect Server Data \; movement behaviour - cohesion
+\, seperation \, wander;
+#X obj 367 -74 cnv 15 100 20 empty \$0-Ip 10.100.1.233 20 12 0 10 -233017
+-1 0;
+#X text 344 -149 local IP 169.254.0.1;
+#X text 528 129 It is recommended to create a local Wi-Fi network on
+the Host computer in order to more efficiently stream data back and
+forth between kinect devices and mobiles;
+#X text 528 176 After creating the local network \, IP address of the
+HOST should be set to 169.254.0.1 If youwant to use a different IP
+make sure that you also set that IP in SOPImobile.xcodeproj and in
+KinectTracking application;
+#X connect 2 0 6 0;
+#X connect 3 0 0 0;
+#X connect 7 0 3 0;
+#X connect 7 0 9 0;
+#X connect 9 0 13 0;
+#X connect 9 1 14 0;
+#X connect 9 2 15 0;
+#X connect 9 3 16 0;
+#X connect 9 4 17 0;
+#X connect 9 5 30 0;
+#X connect 9 6 18 0;
+#X connect 9 7 19 0;
+#X connect 9 8 20 0;
+#X coords 0 -1 1 1 350 100 1 120 -130;

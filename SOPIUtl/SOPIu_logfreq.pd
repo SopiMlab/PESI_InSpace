@@ -1,0 +1,13 @@
+#N canvas 949 329 450 300 10;
+#X obj 59 50 loadbang;
+#X obj 91 121 pow;
+#X obj 121 37 inlet;
+#X msg 59 80 10;
+#X obj 90 158 outlet;
+#X obj 121 77 t b f;
+#X connect 0 0 3 0;
+#X connect 1 0 4 0;
+#X connect 2 0 5 0;
+#X connect 3 0 1 0;
+#X connect 5 0 1 0;
+#X connect 5 1 1 1;
