@@ -1,24 +1,12 @@
-#N canvas 71 69 935 750 10;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path ../granular;
-#X declare -path ../samples;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path SOPI;
-#X declare -path INSTR;
+#N canvas 770 104 935 750 10;
 #X declare -path SOPI;
 #X declare -path INSTR;
 #X declare -path ../granular;
 #X declare -path ../samples;
 #X declare -path SOPI;
 #X declare -path INSTR;
-#X declare -path SOPI;
-#X declare -path INSTR;
+#X declare -path ../granular;
+#X declare -path ../samples;
 #X declare -path SOPI;
 #X declare -path INSTR;
 #X declare -path ../granular;
@@ -61,16 +49,29 @@
 #X obj 614 698 cnv 15 300 20 empty empty https://github.com/SopiMlab
 20 10 0 12 -162280 -66577 0;
 #X obj 620 62 declare -path SOPIUtl;
-#N canvas 834 292 450 300 README 0;
+#X obj 317 248 ConnectionControl 5;
+#X obj 23 248 ConnectionControl 4;
+#X obj 613 247 ConnectionControl 6;
+#N canvas 834 292 450 300 README_libs 0;
 #X text 34 101 It is recommended to use the current version of Pd-extended
 ;
 #X text 35 47 Make sure that you import the followign libraries in
 Pd \; iemlib eimgui \, vbap \, OSC;
 #X obj 37 5 import iemgui vbap iemlib oscx;
-#X restore 620 108 pd README;
-#X obj 317 248 ConnectionControl 5;
-#X obj 23 248 ConnectionControl 4;
-#X obj 613 247 ConnectionControl 6;
+#X restore 620 108 pd README_libs;
+#N canvas 734 264 450 300 README 0;
+#X text 16 15 The in-space component implements a Kinect motion track-
+ing module that constantly computes the spatial position of the three
+performers and extracts information about their relations \, such as
+relative distances \, velocity \, acceleration and alignment;
+#X text 16 100 The tracking module avoids the loss of tracked players
+due to occlusions or abrupt move- ments. The in-space component is
+conditioned by the crit- ical requirements of three-musicians performing
+in a group improvisation. The modular structure of the motion track-
+ing module enables us to add several kinects to the system for a reliable
+tracking. In its current system structure with three musicians performing
+\, we implemented the tracking system with two Kinects.;
+#X restore 623 141 pd README;
 #X connect 10 0 9 0;
 #X connect 10 1 9 1;
 #X connect 10 2 9 2;
@@ -80,26 +81,26 @@ Pd \; iemlib eimgui \, vbap \, OSC;
 #X connect 12 0 9 6;
 #X connect 12 5 9 7;
 #X connect 12 6 9 8;
-#X connect 22 0 11 0;
-#X connect 22 1 11 1;
-#X connect 22 2 11 2;
-#X connect 22 3 11 3;
-#X connect 22 4 11 4;
-#X connect 22 5 11 5;
-#X connect 22 6 11 6;
-#X connect 22 7 11 7;
-#X connect 23 1 10 1;
-#X connect 23 2 10 2;
-#X connect 23 3 10 3;
-#X connect 23 4 10 4;
-#X connect 23 5 10 5;
-#X connect 23 6 10 6;
-#X connect 23 7 10 7;
-#X connect 24 0 12 0;
-#X connect 24 1 12 1;
-#X connect 24 2 12 2;
-#X connect 24 3 12 3;
-#X connect 24 4 12 4;
-#X connect 24 5 12 5;
-#X connect 24 6 12 6;
-#X connect 24 7 12 7;
+#X connect 21 0 11 0;
+#X connect 21 1 11 1;
+#X connect 21 2 11 2;
+#X connect 21 3 11 3;
+#X connect 21 4 11 4;
+#X connect 21 5 11 5;
+#X connect 21 6 11 6;
+#X connect 21 7 11 7;
+#X connect 22 1 10 1;
+#X connect 22 2 10 2;
+#X connect 22 3 10 3;
+#X connect 22 4 10 4;
+#X connect 22 5 10 5;
+#X connect 22 6 10 6;
+#X connect 22 7 10 7;
+#X connect 23 0 12 0;
+#X connect 23 1 12 1;
+#X connect 23 2 12 2;
+#X connect 23 3 12 3;
+#X connect 23 4 12 4;
+#X connect 23 5 12 5;
+#X connect 23 6 12 6;
+#X connect 23 7 12 7;

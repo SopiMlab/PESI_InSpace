@@ -78,6 +78,20 @@ forth between kinect devices and mobiles;
 HOST should be set to 169.254.0.1 If youwant to use a different IP
 make sure that you also set that IP in SOPImobile.xcodeproj and in
 KinectTracking application;
+#N canvas 1145 142 450 300 README_netwrok_module 0;
+#X text 35 10 The in-space network module is centralized in a laptop
+machine and hosts a local wireless network. It facilitates continuous
+and vital communication between the on-body and in-space components.
+It constantly receives interac- tion data from the mobile phones and
+tracking information through the OSC network module. The tracking module
+permits location of the audio as close to the source as possi- ble
+\, reinforcing the sound produced by the wearable speak- ers. The sound
+routed to the main speakers is manipu- lated using the information
+regarding the distance between performers in Pure Data. Therefore \,
+the relative position of each performer regarding each other \, and
+the speed of her/his movement to or from the others \, a↵ects the
+overall sound.;
+#X restore 725 -153 pd README_netwrok_module;
 #X connect 2 0 6 0;
 #X connect 3 0 0 0;
 #X connect 7 0 3 0;
