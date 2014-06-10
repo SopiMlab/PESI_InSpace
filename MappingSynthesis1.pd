@@ -1,8 +1,4 @@
-#N canvas 845 370 1168 583 10;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path ../granular;
-#X declare -path ../samples;
+#N canvas 321 132 1168 583 10;
 #X obj 285 -44 cnv 15 800 250 empty empty mapping 20 12 0 14 -233017
 -66577 0;
 #X obj -39 -44 cnv 15 320 250 empty empty GUI 20 12 0 14 -233017 -66577
@@ -127,16 +123,15 @@
 #X obj 590 19 r \$0-InId;
 #X obj 998 264 outlet;
 #X obj 419 310 _PESI_Green_onbody;
-#X obj 552 311 _PESI_Blue_onbody 1;
-#X obj 566 449 graincloud;
 #X obj 286 312 _PESI_Red_onbody;
-#X text -46 257 When the performer chooses one of the sound modules
+#X text -33 244 When the performer chooses one of the sound modules
 in the mobile instrument \, that particular sound module is also activated
 in the in-space component and produces the audio signals to be processed
 further.;
 #X text 707 382 The overall audio synthesis design is aimed for creating
 a layer of sound cloud that is identical to the individual mobile instrument.
 ;
+#X obj 552 311 _PESI_Blue_onbody;
 #X connect 4 0 6 0;
 #X connect 4 0 21 0;
 #X connect 5 0 22 0;
@@ -154,28 +149,26 @@ a layer of sound cloud that is identical to the individual mobile instrument.
 #X connect 8 3 7 3;
 #X connect 8 4 7 4;
 #X connect 8 5 7 5;
-#X connect 15 0 33 0;
-#X connect 16 0 31 0;
+#X connect 15 0 31 0;
+#X connect 16 0 34 0;
 #X connect 17 0 5 0;
 #X connect 18 0 29 0;
 #X connect 19 0 30 0;
 #X connect 22 0 30 2;
-#X connect 22 0 32 1;
-#X connect 22 0 33 2;
-#X connect 22 1 30 3;
-#X connect 22 1 32 2;
-#X connect 22 1 33 3;
+#X connect 22 0 31 2;
+#X connect 22 0 34 2;
+#X connect 22 2 31 3;
+#X connect 22 2 30 3;
+#X connect 22 2 34 3;
 #X connect 23 0 24 0;
-#X connect 24 0 32 3;
 #X connect 25 0 8 0;
-#X connect 26 0 33 1;
+#X connect 26 0 31 1;
 #X connect 27 0 30 1;
-#X connect 28 0 31 1;
+#X connect 28 0 34 1;
 #X connect 30 0 20 0;
 #X connect 30 1 20 0;
-#X connect 31 0 32 0;
-#X connect 31 1 32 0;
-#X connect 32 0 20 0;
-#X connect 33 0 20 0;
-#X connect 33 1 20 0;
+#X connect 31 0 20 0;
+#X connect 31 1 20 0;
+#X connect 34 0 20 0;
+#X connect 34 1 20 0;
 #X coords 0 -1 1 1 285 100 1 -22 10;

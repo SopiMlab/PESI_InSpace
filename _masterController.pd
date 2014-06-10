@@ -1,16 +1,4 @@
 #N canvas 770 104 935 750 10;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path ../granular;
-#X declare -path ../samples;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path ../granular;
-#X declare -path ../samples;
-#X declare -path SOPI;
-#X declare -path INSTR;
-#X declare -path ../granular;
-#X declare -path ../samples;
 #X declare -path SOPIInstr;
 #X declare -path SOPIUtl;
 #X declare -lib iemgui -lib vbap -lib iemlib -lib oscx;
