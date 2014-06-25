@@ -1,4 +1,4 @@
-#N canvas 338 198 912 469 10;
+#N canvas 431 116 912 469 10;
 #X obj 131 -81 bng 30 250 50 0 empty empty receiving_Kinect_Data 0
 40 0 10 -262144 -1 -1;
 #X floatatom 236 -114 5 0 0 1 ms_IN_msg_speed receive_SPEEDLIM SPEEDLIM
@@ -68,7 +68,7 @@ IP number;
 #X obj 205 91 s azimuth_pesi;
 #X text 386 26 Kinect Server Data \; movement behaviour - cohesion
 \, seperation \, wander;
-#X obj 367 -74 cnv 15 100 20 empty \$0-Ip 10.100.1.233 20 12 0 10 -233017
+#X obj 367 -74 cnv 15 100 20 empty \$0-Ip 169.254.0.1 20 12 0 10 -233017
 -1 0;
 #X text 344 -149 local IP 169.254.0.1;
 #X text 528 129 It is recommended to create a local Wi-Fi network on
@@ -78,7 +78,7 @@ forth between kinect devices and mobiles;
 HOST should be set to 169.254.0.1 If youwant to use a different IP
 make sure that you also set that IP in SOPImobile.xcodeproj and in
 KinectTracking application;
-#N canvas 1145 142 450 300 README_netwrok_module 0;
+#N canvas 636 173 450 300 README_network_module 0;
 #X text 35 10 The in-space network module is centralized in a laptop
 machine and hosts a local wireless network. It facilitates continuous
 and vital communication between the on-body and in-space components.
@@ -91,7 +91,7 @@ regarding the distance between performers in Pure Data. Therefore \,
 the relative position of each performer regarding each other \, and
 the speed of her/his movement to or from the others \, a↵ects the
 overall sound.;
-#X restore 725 -153 pd README_netwrok_module;
+#X restore 725 -153 pd README_network_module;
 #X connect 2 0 6 0;
 #X connect 3 0 0 0;
 #X connect 7 0 3 0;
